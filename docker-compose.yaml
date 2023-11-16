@@ -18,3 +18,11 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
+
+  app:
+    build: .
+    container_name: go-app
+    volumes:
+      - .:/go/src
+    ports:
+      - "8181:8181"
